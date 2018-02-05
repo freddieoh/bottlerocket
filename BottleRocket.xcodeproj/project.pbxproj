@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F0534A8201A34A8002B3E1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0534A7201A34A8002B3E1E /* AppDelegate.m */; };
+		1F0534AE201A34A8002B3E1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0534AC201A34A8002B3E1E /* Main.storyboard */; };
+		1F0534B0201A34A8002B3E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0534AF201A34A8002B3E1E /* Assets.xcassets */; };
+		1F0534B3201A34A8002B3E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0534B1201A34A8002B3E1E /* LaunchScreen.storyboard */; };
+		1F0534B6201A34A8002B3E1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0534B5201A34A8002B3E1E /* main.m */; };
+		1F0534C0201A34A8002B3E1E /* BottleRocketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0534BF201A34A8002B3E1E /* BottleRocketTests.m */; };
+		1F0534CD201A36C4002B3E1E /* BRTCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0534CB201A36C4002B3E1E /* BRTCollectionViewController.m */; };
+		1F399C04201D5AA000E41DA5 /* BRTRestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F399C03201D5AA000E41DA5 /* BRTRestaurantCell.m */; };
+		1F444E79201A4A54000C98A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F444E78201A4A54000C98A5 /* Default-568h@2x.png */; };
+		1FB7AF1E2026A4E40053EB59 /* BRTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7AF1D2026A4E40053EB59 /* BRTWebViewController.m */; };
+		1FECC5D1201D646600958E43 /* BRTRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FECC5D0201D646600958E43 /* BRTRestaurant.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F0534BC201A34A8002B3E1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F05349B201A34A8002B3E1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F0534A2201A34A8002B3E1E;
+			remoteInfo = BottleRocket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F0534A3201A34A8002B3E1E /* BottleRocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottleRocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0534A6201A34A8002B3E1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1F0534A7201A34A8002B3E1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1F0534AD201A34A8002B3E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F0534AF201A34A8002B3E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F0534B2201A34A8002B3E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1F0534B4201A34A8002B3E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F0534B5201A34A8002B3E1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F0534BB201A34A8002B3E1E /* BottleRocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BottleRocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0534BF201A34A8002B3E1E /* BottleRocketTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottleRocketTests.m; sourceTree = "<group>"; };
+		1F0534C1201A34A8002B3E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F0534CA201A36C4002B3E1E /* BRTCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTCollectionViewController.h; sourceTree = "<group>"; };
+		1F0534CB201A36C4002B3E1E /* BRTCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTCollectionViewController.m; sourceTree = "<group>"; };
+		1F399C02201D5AA000E41DA5 /* BRTRestaurantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTRestaurantCell.h; sourceTree = "<group>"; };
+		1F399C03201D5AA000E41DA5 /* BRTRestaurantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTRestaurantCell.m; sourceTree = "<group>"; };
+		1F444E78201A4A54000C98A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1FB7AF1C2026A4E40053EB59 /* BRTWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTWebViewController.h; sourceTree = "<group>"; };
+		1FB7AF1D2026A4E40053EB59 /* BRTWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTWebViewController.m; sourceTree = "<group>"; };
+		1FECC5CF201D646600958E43 /* BRTRestaurant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTRestaurant.h; sourceTree = "<group>"; };
+		1FECC5D0201D646600958E43 /* BRTRestaurant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTRestaurant.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F0534A0201A34A8002B3E1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F0534B8201A34A8002B3E1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F05349A201A34A8002B3E1E = {
+			isa = PBXGroup;
+			children = (
+				1F0534A5201A34A8002B3E1E /* BottleRocket */,
+				1F0534D3201A3FF3002B3E1E /* Supporting Files */,
+				1F0534BE201A34A8002B3E1E /* BottleRocketTests */,
+				1F0534A4201A34A8002B3E1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F0534A4201A34A8002B3E1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F0534A3201A34A8002B3E1E /* BottleRocket.app */,
+				1F0534BB201A34A8002B3E1E /* BottleRocketTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F0534A5201A34A8002B3E1E /* BottleRocket */ = {
+			isa = PBXGroup;
+			children = (
+				1F0534D2201A3FE4002B3E1E /* Models */,
+				1F0534D1201A3FDF002B3E1E /* Views */,
+				1F0534D0201A3FDA002B3E1E /* Controllers */,
+			);
+			path = BottleRocket;
+			sourceTree = "<group>";
+		};
+		1F0534BE201A34A8002B3E1E /* BottleRocketTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F0534BF201A34A8002B3E1E /* BottleRocketTests.m */,
+				1F0534C1201A34A8002B3E1E /* Info.plist */,
+			);
+			path = BottleRocketTests;
+			sourceTree = "<group>";
+		};
+		1F0534D0201A3FDA002B3E1E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F0534CA201A36C4002B3E1E /* BRTCollectionViewController.h */,
+				1F0534CB201A36C4002B3E1E /* BRTCollectionViewController.m */,
+				1FB7AF1C2026A4E40053EB59 /* BRTWebViewController.h */,
+				1FB7AF1D2026A4E40053EB59 /* BRTWebViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1F0534D1201A3FDF002B3E1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F399C02201D5AA000E41DA5 /* BRTRestaurantCell.h */,
+				1F399C03201D5AA000E41DA5 /* BRTRestaurantCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1F0534D2201A3FE4002B3E1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1FECC5CF201D646600958E43 /* BRTRestaurant.h */,
+				1FECC5D0201D646600958E43 /* BRTRestaurant.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1F0534D3201A3FF3002B3E1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F444E78201A4A54000C98A5 /* Default-568h@2x.png */,
+				1F0534B4201A34A8002B3E1E /* Info.plist */,
+				1F0534A6201A34A8002B3E1E /* AppDelegate.h */,
+				1F0534A7201A34A8002B3E1E /* AppDelegate.m */,
+				1F0534AC201A34A8002B3E1E /* Main.storyboard */,
+				1F0534AF201A34A8002B3E1E /* Assets.xcassets */,
+				1F0534B1201A34A8002B3E1E /* LaunchScreen.storyboard */,
+				1F0534B5201A34A8002B3E1E /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F0534A2201A34A8002B3E1E /* BottleRocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F0534C4201A34A8002B3E1E /* Build configuration list for PBXNativeTarget "BottleRocket" */;
+			buildPhases = (
+				1F05349F201A34A8002B3E1E /* Sources */,
+				1F0534A0201A34A8002B3E1E /* Frameworks */,
+				1F0534A1201A34A8002B3E1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BottleRocket;
+			productName = BottleRocket;
+			productReference = 1F0534A3201A34A8002B3E1E /* BottleRocket.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F0534BA201A34A8002B3E1E /* BottleRocketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F0534C7201A34A8002B3E1E /* Build configuration list for PBXNativeTarget "BottleRocketTests" */;
+			buildPhases = (
+				1F0534B7201A34A8002B3E1E /* Sources */,
+				1F0534B8201A34A8002B3E1E /* Frameworks */,
+				1F0534B9201A34A8002B3E1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F0534BD201A34A8002B3E1E /* PBXTargetDependency */,
+			);
+			name = BottleRocketTests;
+			productName = BottleRocketTests;
+			productReference = 1F0534BB201A34A8002B3E1E /* BottleRocketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F05349B201A34A8002B3E1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = geeoku;
+				TargetAttributes = {
+					1F0534A2201A34A8002B3E1E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					1F0534BA201A34A8002B3E1E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1F0534A2201A34A8002B3E1E;
+					};
+				};
+			};
+			buildConfigurationList = 1F05349E201A34A8002B3E1E /* Build configuration list for PBXProject "BottleRocket" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F05349A201A34A8002B3E1E;
+			productRefGroup = 1F0534A4201A34A8002B3E1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F0534A2201A34A8002B3E1E /* BottleRocket */,
+				1F0534BA201A34A8002B3E1E /* BottleRocketTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F0534A1201A34A8002B3E1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0534B3201A34A8002B3E1E /* LaunchScreen.storyboard in Resources */,
+				1F0534B0201A34A8002B3E1E /* Assets.xcassets in Resources */,
+				1F444E79201A4A54000C98A5 /* Default-568h@2x.png in Resources */,
+				1F0534AE201A34A8002B3E1E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F0534B9201A34A8002B3E1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F05349F201A34A8002B3E1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0534CD201A36C4002B3E1E /* BRTCollectionViewController.m in Sources */,
+				1F399C04201D5AA000E41DA5 /* BRTRestaurantCell.m in Sources */,
+				1FECC5D1201D646600958E43 /* BRTRestaurant.m in Sources */,
+				1F0534B6201A34A8002B3E1E /* main.m in Sources */,
+				1FB7AF1E2026A4E40053EB59 /* BRTWebViewController.m in Sources */,
+				1F0534A8201A34A8002B3E1E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F0534B7201A34A8002B3E1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0534C0201A34A8002B3E1E /* BottleRocketTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F0534BD201A34A8002B3E1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F0534A2201A34A8002B3E1E /* BottleRocket */;
+			targetProxy = 1F0534BC201A34A8002B3E1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F0534AC201A34A8002B3E1E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F0534AD201A34A8002B3E1E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1F0534B1201A34A8002B3E1E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F0534B2201A34A8002B3E1E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F0534C2201A34A8002B3E1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1F0534C3201A34A8002B3E1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F0534C5201A34A8002B3E1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7E646DTM59;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.geeoku.BottleRocket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1F0534C6201A34A8002B3E1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7E646DTM59;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.geeoku.BottleRocket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1F0534C8201A34A8002B3E1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7E646DTM59;
+				INFOPLIST_FILE = BottleRocketTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.geeoku.BottleRocketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BottleRocket.app/BottleRocket";
+			};
+			name = Debug;
+		};
+		1F0534C9201A34A8002B3E1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7E646DTM59;
+				INFOPLIST_FILE = BottleRocketTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.geeoku.BottleRocketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BottleRocket.app/BottleRocket";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F05349E201A34A8002B3E1E /* Build configuration list for PBXProject "BottleRocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0534C2201A34A8002B3E1E /* Debug */,
+				1F0534C3201A34A8002B3E1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F0534C4201A34A8002B3E1E /* Build configuration list for PBXNativeTarget "BottleRocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0534C5201A34A8002B3E1E /* Debug */,
+				1F0534C6201A34A8002B3E1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F0534C7201A34A8002B3E1E /* Build configuration list for PBXNativeTarget "BottleRocketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0534C8201A34A8002B3E1E /* Debug */,
+				1F0534C9201A34A8002B3E1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F05349B201A34A8002B3E1E /* Project object */;
+}
