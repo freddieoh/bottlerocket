@@ -6,11 +6,11 @@
 //  Copyright © 2018 geeoku. All rights reserved.
 //
 
-#import "BRTCollectionViewController.h"
+#import "BRTRestaurantViewController.h"
 #import "BRTRestaurant.h"
 #import "BRTRestaurantCell.h"
 
-@interface BRTCollectionViewController ()
+@interface BRTRestaurantViewController ()
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, strong) NSURLSessionTask *sessionTask;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation BRTCollectionViewController
+@implementation BRTRestaurantViewController
 
 static NSString * const cellIdentifier = @"RestaurantCell";
 static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/restaurants.json";
@@ -100,6 +100,7 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
         
         cell.restaurantNameLabel.text = restaurant[@"name"];
         cell.categoryLabel.text = restaurant[@"category"];
+        
     }
     
     return cell;
@@ -120,14 +121,16 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section; {
 }
 
 
-/*
+
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
+     
+     
  }
- */
+
 
 @end

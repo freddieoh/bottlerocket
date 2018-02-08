@@ -10,39 +10,50 @@
 
 @interface BRTWebViewController ()
 
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *backButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *forwardButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *refreshButton;
+
+
 @end
 
 @implementation BRTWebViewController
 
-static NSString * const bottleRocketURL = @"https://www.bottlerocketstudios.com/";
+static NSString * const BOTTLEROCKET_URL = @"https://www.bottlerocketstudios.com/";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setupWebView];
+    
 
 }
-
 
 - (void)setupWebView {
    
     UIWebView *webView= [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 1024,768)];
-    NSString *url= bottleRocketURL;
-    NSURL *nsURL= [NSURL URLWithString:url];
-    NSURLRequest *request=[NSURLRequest requestWithURL:nsURL];
+    NSString *url= BOTTLEROCKET_URL;
+    NSURL *NS_URL= [NSURL URLWithString:url];
+    NSURLRequest *request=[NSURLRequest requestWithURL:NS_URL];
     webView.frame = self.view.bounds;
+    webView.scalesPageToFit = YES;
     [webView loadRequest:request];
     [self.view addSubview:webView];
+    
+    
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma UIWebViewDelegates
+
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    
 }
-*/
+
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+}
 
 @end

@@ -13,8 +13,9 @@
 		1F0534B3201A34A8002B3E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0534B1201A34A8002B3E1E /* LaunchScreen.storyboard */; };
 		1F0534B6201A34A8002B3E1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0534B5201A34A8002B3E1E /* main.m */; };
 		1F0534C0201A34A8002B3E1E /* BottleRocketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0534BF201A34A8002B3E1E /* BottleRocketTests.m */; };
-		1F0534CD201A36C4002B3E1E /* BRTCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0534CB201A36C4002B3E1E /* BRTCollectionViewController.m */; };
+		1F0534CD201A36C4002B3E1E /* BRTRestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0534CB201A36C4002B3E1E /* BRTRestaurantViewController.m */; };
 		1F399C04201D5AA000E41DA5 /* BRTRestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F399C03201D5AA000E41DA5 /* BRTRestaurantCell.m */; };
+		1F3FCAD5202CE0CD00A782C5 /* BRTRestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FCAD4202CE0CD00A782C5 /* BRTRestaurantDetailViewController.m */; };
 		1F444E79201A4A54000C98A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F444E78201A4A54000C98A5 /* Default-568h@2x.png */; };
 		1FB7AF1E2026A4E40053EB59 /* BRTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7AF1D2026A4E40053EB59 /* BRTWebViewController.m */; };
 		1FECC5D1201D646600958E43 /* BRTRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FECC5D0201D646600958E43 /* BRTRestaurant.m */; };
@@ -42,10 +43,12 @@
 		1F0534BB201A34A8002B3E1E /* BottleRocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BottleRocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0534BF201A34A8002B3E1E /* BottleRocketTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottleRocketTests.m; sourceTree = "<group>"; };
 		1F0534C1201A34A8002B3E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F0534CA201A36C4002B3E1E /* BRTCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTCollectionViewController.h; sourceTree = "<group>"; };
-		1F0534CB201A36C4002B3E1E /* BRTCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTCollectionViewController.m; sourceTree = "<group>"; };
+		1F0534CA201A36C4002B3E1E /* BRTRestaurantViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTRestaurantViewController.h; sourceTree = "<group>"; };
+		1F0534CB201A36C4002B3E1E /* BRTRestaurantViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTRestaurantViewController.m; sourceTree = "<group>"; };
 		1F399C02201D5AA000E41DA5 /* BRTRestaurantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTRestaurantCell.h; sourceTree = "<group>"; };
 		1F399C03201D5AA000E41DA5 /* BRTRestaurantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTRestaurantCell.m; sourceTree = "<group>"; };
+		1F3FCAD3202CE0CD00A782C5 /* BRTRestaurantDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTRestaurantDetailViewController.h; sourceTree = "<group>"; };
+		1F3FCAD4202CE0CD00A782C5 /* BRTRestaurantDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTRestaurantDetailViewController.m; sourceTree = "<group>"; };
 		1F444E78201A4A54000C98A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1FB7AF1C2026A4E40053EB59 /* BRTWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTWebViewController.h; sourceTree = "<group>"; };
 		1FB7AF1D2026A4E40053EB59 /* BRTWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTWebViewController.m; sourceTree = "<group>"; };
@@ -112,10 +115,12 @@
 		1F0534D0201A3FDA002B3E1E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1F0534CA201A36C4002B3E1E /* BRTCollectionViewController.h */,
-				1F0534CB201A36C4002B3E1E /* BRTCollectionViewController.m */,
+				1F0534CA201A36C4002B3E1E /* BRTRestaurantViewController.h */,
+				1F0534CB201A36C4002B3E1E /* BRTRestaurantViewController.m */,
 				1FB7AF1C2026A4E40053EB59 /* BRTWebViewController.h */,
 				1FB7AF1D2026A4E40053EB59 /* BRTWebViewController.m */,
+				1F3FCAD3202CE0CD00A782C5 /* BRTRestaurantDetailViewController.h */,
+				1F3FCAD4202CE0CD00A782C5 /* BRTRestaurantDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,7 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F0534CD201A36C4002B3E1E /* BRTCollectionViewController.m in Sources */,
+				1F0534CD201A36C4002B3E1E /* BRTRestaurantViewController.m in Sources */,
+				1F3FCAD5202CE0CD00A782C5 /* BRTRestaurantDetailViewController.m in Sources */,
 				1F399C04201D5AA000E41DA5 /* BRTRestaurantCell.m in Sources */,
 				1FECC5D1201D646600958E43 /* BRTRestaurant.m in Sources */,
 				1F0534B6201A34A8002B3E1E /* main.m in Sources */,

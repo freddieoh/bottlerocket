@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BRTCollectionViewController : UICollectionViewController
+@interface BRTRestaurantViewController : UICollectionViewController
 
 
 @end
