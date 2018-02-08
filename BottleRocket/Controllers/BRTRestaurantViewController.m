@@ -7,6 +7,7 @@
 //
 
 #import "BRTRestaurantViewController.h"
+#import "BRTRestaurantDetailViewController.h"
 #import "BRTRestaurant.h"
 #import "BRTRestaurantCell.h"
 
@@ -46,11 +47,10 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
     _sessionTask = [self.session dataTaskWithRequest:request
                                    completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
                                        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
-                                                                                            options:0
+                                                                                                  options:0
                                                                                                     error:nil];
                                        
                                        self.restaurants = jsonObject[@"restaurants"];
-                                       
                 dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView reloadData];
                             });
@@ -66,7 +66,6 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
     return 1;
 }
 
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.restaurants count];
 }
@@ -75,7 +74,6 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     BRTRestaurantCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    
     cell.tag = indexPath.row;
     NSDictionary *restaurant = self.restaurants[indexPath.row];
     if (restaurant)
@@ -106,6 +104,10 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath; {
@@ -123,14 +125,17 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section; {
 
 
  #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
-     
-     
- }
+
+// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+// // Get the new view controller using [segue destinationViewController].
+// // Pass the selected object to the new view controller.
+//     if([segue.identifier isEqualToString:@"RestaurantSegue"]){
+//         UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+//         BRTRestaurantDetailViewController *controller = (BRTRestaurantDetailViewController *)navController.topViewController;
+//         controller.restaurantNameLabel.text = @"test";
+//
+//     }
+ //}
 
 
 @end

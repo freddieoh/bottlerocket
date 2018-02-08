@@ -10,4 +10,9 @@
 
 @interface BRTRestaurantDetailViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *restaurantNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *categoryNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *phoneNumberLabel;
+
+
 @end
