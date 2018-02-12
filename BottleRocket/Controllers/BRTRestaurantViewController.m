@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, strong) NSURLSessionTask *sessionTask;
 @property (nonatomic, strong) NSCache *imageCache;
-@property (nonatomic) NSMutableArray *restaurantsArray;
+@property (nonatomic) NSMutableArray *restaurants;
 
 @end
 
@@ -30,7 +30,7 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
     
     [self sessionConfiguration];
     [self fetchJSON];
-
+    
 }
 
 - (void)sessionConfiguration {
@@ -48,20 +48,20 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
     _sessionTask = [self.session dataTaskWithRequest:request
                                    completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
                                        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data
-                                                                                                  options:0
+                                                                                                      options:0
                                                                                                         error:nil];
-                                       _restaurantsArray = [[NSMutableArray alloc] init];
+                                       _restaurants = [[NSMutableArray alloc] init];
                                        BRTRestaurant *restaurant = [[BRTRestaurant alloc] init];
-                                       self.restaurantsArray = jsonDictionary[@"restaurants"];
+                                       self.restaurants = jsonDictionary[@"restaurants"];
                                        for (NSDictionary *dict in jsonDictionary[@"restaurants"]) {
                                            restaurant.name = [dict objectForKey:@"name"];
                                            restaurant.category = [dict objectForKey:@"category"];
-                                                                            }
+                                       }
                                        dispatch_async(dispatch_get_main_queue(), ^{
                                            [self.collectionView reloadData];
                                        });
-                                       self.restaurantsArray = _restaurantsArray;
-                                  
+                                       self.restaurants = _restaurants;
+                                       
                                    }];
     [self.sessionTask resume];
 };
@@ -73,7 +73,7 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.restaurantsArray count];
+    return [self.restaurants count];
 }
 
 
@@ -81,11 +81,12 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
     
     BRTRestaurantCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    NSDictionary *restaurant = self.restaurantsArray[indexPath.row];
+    NSDictionary *restaurant = self.restaurants[indexPath.row];
     cell.tag = indexPath.row;
     if (restaurant)
     {
-        cell.restaurantImageView.image = nil;
+        UIImage *defaultImage = [UIImage imageNamed:@"cellGradientBackground"];
+        cell.restaurantImageView.image = defaultImage;
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^(void) {
             
@@ -116,24 +117,25 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
 }
 
 #pragma mark - Navigation
+
 /*
+ // I couldn't figure out how to pass my restaurant model objects to DetailViewController, name and label are both nil.
+ I'm looping through my JSON and adding it to my restaurant model in fetchJSON method
+ Exception breakpoint shows error occurs on line 132
  
- I couldn't figure out how to pass my restaurant objects to DetailViewController
  
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:segueIdentifier]) {
-        BRTRestaurantDetailViewController *detailViewController = [segue destinationViewController];
-        NSIndexPath *indexPath  = [self.collectionView indexPathForCell:(BRTRestaurantCell *)sender];
-        BRTRestaurant *restaurant = self.restaurantsArray[indexPath.row];
-        detailViewController.name = restaurant.name;
-
-    }
-}
+ if ([segue.identifier isEqualToString:segueIdentifier]) {
+ BRTRestaurantDetailViewController *detailViewController = [segue destinationViewController];
+ NSIndexPath *indexPath  = [self.collectionView indexPathForCell:(BRTRestaurantCell *)sender];
+ BRTRestaurant *restaurant = self.restaurants[indexPath.row];
+ detailViewController.name = restaurant.name;
  
-*/
-
+ }
+ }
+ 
+ */
 
 // #pragma mark - CollectionViewLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView
