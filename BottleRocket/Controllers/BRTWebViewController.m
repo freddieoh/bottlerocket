@@ -10,10 +10,6 @@
 
 @interface BRTWebViewController ()
 
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *backButton;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *forwardButton;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *refreshButton;
-
 
 @end
 
@@ -24,8 +20,6 @@ static NSString * const BOTTLEROCKET_URL = @"https://www.bottlerocketstudios.com
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupWebView];
-    
-
 }
 
 - (void)setupWebView {
@@ -38,22 +32,7 @@ static NSString * const BOTTLEROCKET_URL = @"https://www.bottlerocketstudios.com
     webView.scalesPageToFit = YES;
     [webView loadRequest:request];
     [self.view addSubview:webView];
-    
-    
-    
-}
 
-
-#pragma UIWebViewDelegates
-
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    
-}
-
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    
 }
 
 @end

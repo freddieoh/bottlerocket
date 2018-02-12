@@ -13,5 +13,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *restaurantNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *categoryLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *restaurantImageView;
+@property (nonatomic, weak) IBOutlet UILabel *phoneNumberLabel;
 
 @end

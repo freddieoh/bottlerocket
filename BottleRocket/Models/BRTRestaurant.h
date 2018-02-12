@@ -13,7 +13,13 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSString *backgroundImageURL;
-@property (nonatomic, strong) NSDictionary *contact;
+@property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) NSString *contact;
+@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *twitter;
+
+
+
 
 
 @end

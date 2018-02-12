@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BRTRestaurant.h"
+#import "BRTRestaurantDetailViewController.h"
 
 @interface BRTRestaurantViewController : UICollectionViewController
-
-
-
 
 @end

@@ -7,22 +7,22 @@
 //
 
 #import "BRTRestaurantViewController.h"
-#import "BRTRestaurantDetailViewController.h"
-#import "BRTRestaurant.h"
 #import "BRTRestaurantCell.h"
+#import "BRTRestaurantDetailViewController.h"
 
 @interface BRTRestaurantViewController ()
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, strong) NSURLSessionTask *sessionTask;
 @property (nonatomic, strong) NSCache *imageCache;
-@property (nonatomic, copy) NSArray *restaurants;
+@property (nonatomic) NSMutableArray *restaurantsArray;
 
 @end
 
 @implementation BRTRestaurantViewController
 
 static NSString * const cellIdentifier = @"RestaurantCell";
+static NSString * const segueIdentifier = @"RestaurantSegue";
 static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/restaurants.json";
 
 - (void)viewDidLoad {
@@ -30,7 +30,7 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
     
     [self sessionConfiguration];
     [self fetchJSON];
-    
+
 }
 
 - (void)sessionConfiguration {
@@ -40,25 +40,31 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
                                         delegateQueue:nil];
 }
 
+
 -(void)fetchJSON {
     NSString *requestString = restaurantURL;
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     _sessionTask = [self.session dataTaskWithRequest:request
                                    completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
-                                       NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
+                                       NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data
                                                                                                   options:0
-                                                                                                    error:nil];
-                                       
-                                       self.restaurants = jsonObject[@"restaurants"];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                [self.collectionView reloadData];
-                            });
+                                                                                                        error:nil];
+                                       _restaurantsArray = [[NSMutableArray alloc] init];
+                                       BRTRestaurant *restaurant = [[BRTRestaurant alloc] init];
+                                       self.restaurantsArray = jsonDictionary[@"restaurants"];
+                                       for (NSDictionary *dict in jsonDictionary[@"restaurants"]) {
+                                           restaurant.name = [dict objectForKey:@"name"];
+                                           restaurant.category = [dict objectForKey:@"category"];
+                                                                            }
+                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                           [self.collectionView reloadData];
+                                       });
+                                       self.restaurantsArray = _restaurantsArray;
+                                  
                                    }];
     [self.sessionTask resume];
 };
-
-
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -67,15 +73,16 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.restaurants count];
+    return [self.restaurantsArray count];
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     BRTRestaurantCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    NSDictionary *restaurant = self.restaurantsArray[indexPath.row];
     cell.tag = indexPath.row;
-    NSDictionary *restaurant = self.restaurants[indexPath.row];
     if (restaurant)
     {
         cell.restaurantImageView.image = nil;
@@ -105,9 +112,30 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-
+    
 }
 
+#pragma mark - Navigation
+/*
+ 
+ I couldn't figure out how to pass my restaurant objects to DetailViewController
+ 
+ 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:segueIdentifier]) {
+        BRTRestaurantDetailViewController *detailViewController = [segue destinationViewController];
+        NSIndexPath *indexPath  = [self.collectionView indexPathForCell:(BRTRestaurantCell *)sender];
+        BRTRestaurant *restaurant = self.restaurantsArray[indexPath.row];
+        detailViewController.name = restaurant.name;
+
+    }
+}
+ 
+*/
+
+
+// #pragma mark - CollectionViewLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath; {
@@ -121,21 +149,5 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section; {
     
     return 0;
 }
-
-
-
- #pragma mark - Navigation
-
-// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-// // Get the new view controller using [segue destinationViewController].
-// // Pass the selected object to the new view controller.
-//     if([segue.identifier isEqualToString:@"RestaurantSegue"]){
-//         UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
-//         BRTRestaurantDetailViewController *controller = (BRTRestaurantDetailViewController *)navController.topViewController;
-//         controller.restaurantNameLabel.text = @"test";
-//
-//     }
- //}
-
 
 @end
