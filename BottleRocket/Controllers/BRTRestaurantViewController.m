@@ -40,7 +40,6 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
                                         delegateQueue:nil];
 }
 
-
 -(void)fetchJSON {
     NSString *requestString = restaurantURL;
     NSURL *url = [NSURL URLWithString:requestString];
@@ -118,11 +117,7 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
 
 #pragma mark - Navigation
 
-/*
- // I couldn't figure out how to pass my restaurant model objects to DetailViewController, name and label are both nil.
- I'm looping through my JSON and adding it to my restaurant model in fetchJSON method
- Exception breakpoint shows error occurs on line 132
- 
+
  
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  
@@ -130,12 +125,11 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
  BRTRestaurantDetailViewController *detailViewController = [segue destinationViewController];
  NSIndexPath *indexPath  = [self.collectionView indexPathForCell:(BRTRestaurantCell *)sender];
  BRTRestaurant *restaurant = self.restaurants[indexPath.row];
- detailViewController.name = restaurant.name;
+     detailViewController.name = restaurant.name;
  
+            }
  }
- }
- 
- */
+
 
 // #pragma mark - CollectionViewLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView

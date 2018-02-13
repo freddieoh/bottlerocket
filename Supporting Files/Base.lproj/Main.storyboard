@@ -43,17 +43,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                             <color key="backgroundColor" red="0.20392156859999999" green="0.70196078429999997" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTd-1l-1FX">
-                                            <rect key="frame" x="7" y="123" width="254" height="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTd-1l-1FX">
+                                            <rect key="frame" x="26" y="110" width="128" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjU-kj-SxY">
-                                            <rect key="frame" x="8" y="148" width="274" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="1nq-8o-Ai1"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjU-kj-SxY">
+                                            <rect key="frame" x="20" y="137" width="224" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -63,14 +62,8 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="OaX-RT-gW5" secondAttribute="bottom" id="74i-cH-T5w"/>
                                     <constraint firstAttribute="trailing" secondItem="OaX-RT-gW5" secondAttribute="trailing" id="B2B-Wc-RVp"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="MjU-kj-SxY" secondAttribute="bottom" constant="3" id="CrI-3a-JTs"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="mTd-1l-1FX" secondAttribute="trailing" constant="106" id="Mis-e4-iet"/>
-                                    <constraint firstItem="MjU-kj-SxY" firstAttribute="leading" secondItem="K0i-kn-FxJ" secondAttribute="leadingMargin" id="WgB-hU-irp"/>
                                     <constraint firstItem="OaX-RT-gW5" firstAttribute="leading" secondItem="K0i-kn-FxJ" secondAttribute="leading" id="WoZ-QW-DJE"/>
-                                    <constraint firstItem="mTd-1l-1FX" firstAttribute="leading" secondItem="K0i-kn-FxJ" secondAttribute="leadingMargin" constant="-1" id="ZZt-E3-32W"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="MjU-kj-SxY" secondAttribute="trailing" constant="85" id="mu0-5r-Tjj"/>
                                     <constraint firstItem="OaX-RT-gW5" firstAttribute="top" secondItem="K0i-kn-FxJ" secondAttribute="top" id="wf3-mx-nt3"/>
-                                    <constraint firstItem="MjU-kj-SxY" firstAttribute="top" secondItem="mTd-1l-1FX" secondAttribute="bottom" constant="3" id="xKJ-Rg-eSR"/>
                                 </constraints>
                                 <size key="customSize" width="375" height="180"/>
                                 <connections>
