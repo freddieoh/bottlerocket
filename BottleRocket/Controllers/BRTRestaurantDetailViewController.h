@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NSString *twitter;
 
 
-@property (nonatomic, strong) BRTRestaurant *restaurant;
+@property (nonatomic) BRTRestaurant *restaurant;
 
 
 

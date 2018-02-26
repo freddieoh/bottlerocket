@@ -18,4 +18,7 @@
 @property (nonatomic, strong) NSString *phone;
 @property (nonatomic, strong) NSString *twitter;
 
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

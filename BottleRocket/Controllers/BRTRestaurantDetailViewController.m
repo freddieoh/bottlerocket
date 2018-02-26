@@ -17,8 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.restaurantNameLabel.text = self.restaurant.name;
-//    self.categoryNameLabel.text = self.restaurant.category;
+    self.restaurantNameLabel.text = self.name;
+    self.categoryNameLabel.text = self.category;
+    self.twitterLabel.text = self.twitter;
     
     
 }

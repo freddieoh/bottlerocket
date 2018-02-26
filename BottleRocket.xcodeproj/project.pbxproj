@@ -17,6 +17,7 @@
 		1F399C04201D5AA000E41DA5 /* BRTRestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F399C03201D5AA000E41DA5 /* BRTRestaurantCell.m */; };
 		1F3FCAD5202CE0CD00A782C5 /* BRTRestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FCAD4202CE0CD00A782C5 /* BRTRestaurantDetailViewController.m */; };
 		1F444E79201A4A54000C98A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F444E78201A4A54000C98A5 /* Default-568h@2x.png */; };
+		1F89406C2040C861007FFDD4 /* BRTContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F89406B2040C861007FFDD4 /* BRTContact.m */; };
 		1FB7AF1E2026A4E40053EB59 /* BRTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7AF1D2026A4E40053EB59 /* BRTWebViewController.m */; };
 		1FECC5D1201D646600958E43 /* BRTRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FECC5D0201D646600958E43 /* BRTRestaurant.m */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,8 @@
 		1F3FCAD3202CE0CD00A782C5 /* BRTRestaurantDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTRestaurantDetailViewController.h; sourceTree = "<group>"; };
 		1F3FCAD4202CE0CD00A782C5 /* BRTRestaurantDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTRestaurantDetailViewController.m; sourceTree = "<group>"; };
 		1F444E78201A4A54000C98A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1F89406A2040C861007FFDD4 /* BRTContact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTContact.h; sourceTree = "<group>"; };
+		1F89406B2040C861007FFDD4 /* BRTContact.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTContact.m; sourceTree = "<group>"; };
 		1FB7AF1C2026A4E40053EB59 /* BRTWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTWebViewController.h; sourceTree = "<group>"; };
 		1FB7AF1D2026A4E40053EB59 /* BRTWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTWebViewController.m; sourceTree = "<group>"; };
 		1FECC5CF201D646600958E43 /* BRTRestaurant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTRestaurant.h; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 			children = (
 				1FECC5CF201D646600958E43 /* BRTRestaurant.h */,
 				1FECC5D0201D646600958E43 /* BRTRestaurant.m */,
+				1F89406A2040C861007FFDD4 /* BRTContact.h */,
+				1F89406B2040C861007FFDD4 /* BRTContact.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				1F0534CD201A36C4002B3E1E /* BRTRestaurantViewController.m in Sources */,
 				1F3FCAD5202CE0CD00A782C5 /* BRTRestaurantDetailViewController.m in Sources */,
 				1F399C04201D5AA000E41DA5 /* BRTRestaurantCell.m in Sources */,
+				1F89406C2040C861007FFDD4 /* BRTContact.m in Sources */,
 				1FECC5D1201D646600958E43 /* BRTRestaurant.m in Sources */,
 				1F0534B6201A34A8002B3E1E /* main.m in Sources */,
 				1FB7AF1E2026A4E40053EB59 /* BRTWebViewController.m in Sources */,

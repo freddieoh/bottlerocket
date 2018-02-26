@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSCache *imageCache;
 @property (nonatomic) NSMutableArray *restaurants;
 
+
 @end
 
 @implementation BRTRestaurantViewController
@@ -44,23 +45,32 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
     NSString *requestString = restaurantURL;
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    _sessionTask = [self.session dataTaskWithRequest:request
-                                   completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
-                                       NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data
-                                                                                                      options:0
-                                                                                                        error:nil];
-                                       _restaurants = [[NSMutableArray alloc] init];
-                                       BRTRestaurant *restaurant = [[BRTRestaurant alloc] init];
-                                       self.restaurants = jsonDictionary[@"restaurants"];
-                                       for (NSDictionary *dict in jsonDictionary[@"restaurants"]) {
-                                           restaurant.name = [dict objectForKey:@"name"];
-                                           restaurant.category = [dict objectForKey:@"category"];
-                                       }
-                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                           [self.collectionView reloadData];
+    _sessionTask = [self.session
+                    dataTaskWithRequest:request
+                    completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+                    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                options:0
+                                                error:nil];
+
+                        BRTRestaurant *res = [[BRTRestaurant alloc] init];
+                        
+                    NSMutableArray *restaurants = [NSMutableArray array];
+                        
+                        for (id restaurantDictionary in jsonDictionary[@"restaurants"]) {
+                            
+                            NSString *address = [restaurantDictionary valueForKeyPath:@"location.address"];
+                            NSLog(@"%@", address);
+                            
+                            
+
+                            
+                                [restaurants addObject:[[BRTRestaurant alloc] initWithDictionary:restaurantDictionary]];}
+                            self.restaurants = restaurants;
+                        
+                        
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [self.collectionView reloadData];
                                        });
-                                       self.restaurants = _restaurants;
-                                       
                                    }];
     [self.sessionTask resume];
 };
@@ -80,36 +90,38 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
     
     BRTRestaurantCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    NSDictionary *restaurant = self.restaurants[indexPath.row];
-    cell.tag = indexPath.row;
-    if (restaurant)
-    {
-        UIImage *defaultImage = [UIImage imageNamed:@"cellGradientBackground"];
-        cell.restaurantImageView.image = defaultImage;
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-        dispatch_async(queue, ^(void) {
-            
-            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:restaurant[@"backgroundImageURL"]]];
-            [self.imageCache setObject:imageData forKey:restaurant[@"backgroundImageURL"]];
-            
-            UIImage* image = [[UIImage alloc] initWithData:imageData];
-            if (image) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (cell.tag == indexPath.row) {
-                        cell.restaurantImageView.image = image;
-                        [cell setNeedsLayout];
-                    }
-                });
-            }
-        });
-        
-        cell.restaurantNameLabel.text = restaurant[@"name"];
-        cell.categoryLabel.text = restaurant[@"category"];
-        
-    }
+    BRTRestaurant *restaurant = self.restaurants[indexPath.row];
+        cell.tag = indexPath.row;
+        if (restaurant)
+        {
+            UIImage *defaultImage = [UIImage imageNamed:@"cellGradientBackground"];
+            cell.restaurantImageView.image = defaultImage;
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+            dispatch_async(queue, ^(void) {
+    
+                NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:restaurant.backgroundImageURL]];
+                [self.imageCache setObject:imageData forKey:restaurant.backgroundImageURL];
+    
+                UIImage* image = [[UIImage alloc] initWithData:imageData];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (cell.tag == indexPath.row) {
+                            cell.restaurantImageView.image = image;
+                            [cell setNeedsLayout];
+                        }
+                    });
+                }
+            });
+    
+    
+    cell.restaurantNameLabel.text = restaurant.name;
+    cell.categoryLabel.text = restaurant.category;
+
+}
     
     return cell;
 }
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -117,18 +129,17 @@ static NSString * const restaurantURL = @"http://sandbox.bottlerocketapps.com/BR
 
 #pragma mark - Navigation
 
-
- 
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- 
- if ([segue.identifier isEqualToString:segueIdentifier]) {
- BRTRestaurantDetailViewController *detailViewController = [segue destinationViewController];
- NSIndexPath *indexPath  = [self.collectionView indexPathForCell:(BRTRestaurantCell *)sender];
- BRTRestaurant *restaurant = self.restaurants[indexPath.row];
-     detailViewController.name = restaurant.name;
- 
-            }
- }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:segueIdentifier]) {
+        BRTRestaurantDetailViewController *detailViewController = [segue destinationViewController];
+        NSIndexPath *indexPath  = [self.collectionView indexPathForCell:(BRTRestaurantCell *)sender];
+        BRTRestaurant *restaurant = self.restaurants[indexPath.row];
+        detailViewController.name = restaurant.name;
+        detailViewController.category = restaurant.category;
+        detailViewController.twitter = restaurant.twitter;
+        
+    }
+}
 
 
 // #pragma mark - CollectionViewLayout
